@@ -1,0 +1,47 @@
+<idea-plugin version="2">
+  <id>com.jotc.nsis.plugin.nsis</id>
+  <name>NSIS Language Support</name>
+  <version>1.0</version>
+  <vendor email="jot.company@gmail.com" url="http://www.jotc.herokuapp.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Language support for NSIS
+    ]]></description>
+
+  <change-notes><![CDATA[
+
+    ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+      <fileTypeFactory implementation="com.jotc.nsis.plugin.NSIFileTypeFactory"/>
+      <fileTypeFactory implementation="com.jotc.nsis.plugin.NSHFileTypeFactory"/>
+      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.plugin.NSIParserDefinition"/>
+      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.plugin.NSHParserDefinition"/>
+      <lang.syntaxHighlighterFactory key="NSIS" implementationClass="com.jotc.nsis.plugin.NSISSyntaxHighlighterFactory"/>
+      <colorSettingsPage implementation="com.jotc.nsis.plugin.NSISColorSettingsPage"/>
+      <lang.commenter language="NSIS" implementationClass="com.jotc.nsis.plugin.NSISCommenter"/>
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
