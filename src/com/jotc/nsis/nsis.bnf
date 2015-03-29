@@ -1,0 +1,20 @@
+{
+  parserClass="com.jotc.nsis.parser.NSISParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="NSIS"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.jotc.nsis.plugin.psi"
+  psiImplPackage="com.jotc.nsis.plugin.psi.impl"
+
+  elementTypeHolderClass="com.jotc.nsis.psi.NSISTypes"
+  elementTypeClass="com.jotc.nsis.psi.NSISElementType"
+  tokenTypeClass="com.jotc.nsis.psi.NSISTokenType"
+
+  psiImplUtilClass="com.jotc.nsis.psi.impl.NSISPsiImplUtil"
+}
+
+nsisFile ::= item_*
+
+private item_ ::= (COMPILE_COMMAND|COMMENT|CRLF|WHITE_SPACE)

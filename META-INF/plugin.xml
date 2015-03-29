@@ -23,13 +23,13 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-      <fileTypeFactory implementation="com.jotc.nsis.plugin.NSIFileTypeFactory"/>
-      <fileTypeFactory implementation="com.jotc.nsis.plugin.NSHFileTypeFactory"/>
-      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.plugin.NSIParserDefinition"/>
-      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.plugin.NSHParserDefinition"/>
-      <lang.syntaxHighlighterFactory key="NSIS" implementationClass="com.jotc.nsis.plugin.NSISSyntaxHighlighterFactory"/>
-      <colorSettingsPage implementation="com.jotc.nsis.plugin.NSISColorSettingsPage"/>
-      <lang.commenter language="NSIS" implementationClass="com.jotc.nsis.plugin.NSISCommenter"/>
+      <fileTypeFactory implementation="com.jotc.nsis.NSIFileTypeFactory"/>
+      <fileTypeFactory implementation="com.jotc.nsis.NSHFileTypeFactory"/>
+      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.NSIParserDefinition"/>
+      <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.NSHParserDefinition"/>
+      <lang.syntaxHighlighterFactory key="NSIS" implementationClass="com.jotc.nsis.NSISSyntaxHighlighterFactory"/>
+      <colorSettingsPage implementation="com.jotc.nsis.NSISColorSettingsPage"/>
+      <lang.commenter language="NSIS" implementationClass="com.jotc.nsis.NSISCommenter"/>
   </extensions>
 
   <application-components>
