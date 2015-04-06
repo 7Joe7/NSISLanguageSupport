@@ -9,6 +9,6 @@ import javax.swing.*;
  * Requirements: ${REQUIREMENTS}
  */
 public class NSISIcons {
-    public static final Icon NSI_FILE = null; // IconLoader.getIcon("/icons/nsi.icon");
-    public static final Icon NSH_FILE = null; // IconLoader.getIcon("/icons/nsh.icon");
+    public static final Icon NSI_FILE = IconLoader.getIcon("/icons/nsis.png");
+    public static final Icon NSH_FILE = IconLoader.getIcon("/icons/nsis.png");
 }

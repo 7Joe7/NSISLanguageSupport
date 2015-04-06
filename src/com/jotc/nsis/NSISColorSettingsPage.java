@@ -18,8 +18,10 @@ import java.util.Map;
  */
 public class NSISColorSettingsPage implements ColorSettingsPage {
     private static final AttributesDescriptor[] DESCRIPTORS = new AttributesDescriptor[]{
-//            new AttributesDescriptor("Key", NSISSyntaxHighlighter.KEY),
-//            new AttributesDescriptor("Separator", NSISSyntaxHighlighter.SEPARATOR),
+            new AttributesDescriptor("Compiler command", NSISSyntaxHighlighter.COMPILER_COMMAND),
+            new AttributesDescriptor("Instruction", NSISSyntaxHighlighter.INSTRUCTION),
+            new AttributesDescriptor("String", NSISSyntaxHighlighter.STRING),
+            new AttributesDescriptor("Number", NSISSyntaxHighlighter.NUMBER),
     };
 
     @Nullable
@@ -37,18 +39,11 @@ public class NSISColorSettingsPage implements ColorSettingsPage {
     @NotNull
     @Override
     public String getDemoText() {
-        return "# You are reading the \".properties\" entry.\n" +
-                "! The exclamation mark can also mark text as comments.\n" +
-                "website = http://en.wikipedia.org/\n" +
-                "language = English\n" +
-                "# The backslash below tells the application to continue reading\n" +
-                "# the value onto the next line.\n" +
-                "message = Welcome to \\\n" +
-                "          Wikipedia!\n" +
-                "# Add spaces to the key\n" +
-                "key\\ with\\ spaces = This is the value that could be looked up with the key \"key with spaces\".\n" +
-                "# Unicode\n" +
-                "tab : \\u0009";
+        return "!include 1 '2' \"3\" CONST ${test} `123` _ABC\n" +
+                "; comment\n" +
+                "CRCCheck On\n" +
+                "nsProcess::_FindProcess /NOUNLOAD\n" +
+                "File /r mpg\n";
     }
 
     @Nullable

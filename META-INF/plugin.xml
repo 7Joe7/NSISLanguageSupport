@@ -2,7 +2,7 @@
   <id>com.jotc.nsis.plugin.nsis</id>
   <name>NSIS Language Support</name>
   <version>1.0</version>
-  <vendor email="jot.company@gmail.com" url="http://www.jotc.herokuapp.com">YourCompany</vendor>
+  <vendor email="jot.company@gmail.com" url="http://www.jotc.herokuapp.com">JOT Company</vendor>
 
   <description><![CDATA[
       Language support for NSIS
@@ -18,13 +18,12 @@
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
-  <!-- uncomment to enable plugin in all products
+  <!-- uncomment to enable plugin in all products -->
   <depends>com.intellij.modules.lang</depends>
-  -->
+  <!-- -->
 
   <extensions defaultExtensionNs="com.intellij">
-      <fileTypeFactory implementation="com.jotc.nsis.NSIFileTypeFactory"/>
-      <fileTypeFactory implementation="com.jotc.nsis.NSHFileTypeFactory"/>
+      <fileTypeFactory implementation="com.jotc.nsis.NSISFileTypeFactory"/>
       <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.NSIParserDefinition"/>
       <lang.parserDefinition language="NSIS" implementationClass="com.jotc.nsis.NSHParserDefinition"/>
       <lang.syntaxHighlighterFactory key="NSIS" implementationClass="com.jotc.nsis.NSISSyntaxHighlighterFactory"/>

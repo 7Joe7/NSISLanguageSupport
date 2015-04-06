@@ -3,14 +3,12 @@ package com.jotc.nsis.parser;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-
-import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
-
-import com.intellij.lang.parser.GeneratedParserUtilBase;
+import static com.jotc.nsis.psi.NSISTypes.*;
+import static com.jotc.nsis.parser.NSISParserUtil.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;
+import com.intellij.psi.tree.TokenSet;
 import com.intellij.lang.PsiParser;
-import com.jotc.nsis.psi.NSISTypes;
 
 @SuppressWarnings({"SimplifiableIfStatement", "UnusedAssignment"})
 public class NSISParser implements PsiParser {
@@ -33,15 +31,26 @@ public class NSISParser implements PsiParser {
   }
 
   /* ********************************************************** */
-  // COMPILE_COMMAND|COMMENT|CRLF|WHITE_SPACE
+  // IDENTIFIER|NUMBER|VARIABLE|CONSTANT|SPECIAL_SYMBOL|VALUE|STRING|PLUGIN_CALL|INSTRUCTION|BLOCK_DECLARATION|KEYWORD|COMPILER_COMMAND|COMMENT|CRLF|WHITE_SPACE
   static boolean item_(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item_")) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = GeneratedParserUtilBase.consumeToken(b, NSISTypes.COMPILE_COMMAND);
-    if (!r) r = GeneratedParserUtilBase.consumeToken(b, NSISTypes.COMMENT);
-    if (!r) r = GeneratedParserUtilBase.consumeToken(b, NSISTypes.CRLF);
-    if (!r) r = GeneratedParserUtilBase.consumeToken(b, NSISTypes.WHITE_SPACE);
+    r = consumeToken(b, IDENTIFIER);
+    if (!r) r = consumeToken(b, NUMBER);
+    if (!r) r = consumeToken(b, VARIABLE);
+    if (!r) r = consumeToken(b, CONSTANT);
+    if (!r) r = consumeToken(b, SPECIAL_SYMBOL);
+    if (!r) r = consumeToken(b, VALUE);
+    if (!r) r = consumeToken(b, STRING);
+    if (!r) r = consumeToken(b, PLUGIN_CALL);
+    if (!r) r = consumeToken(b, INSTRUCTION);
+    if (!r) r = consumeToken(b, BLOCK_DECLARATION);
+    if (!r) r = consumeToken(b, KEYWORD);
+    if (!r) r = consumeToken(b, COMPILER_COMMAND);
+    if (!r) r = consumeToken(b, COMMENT);
+    if (!r) r = consumeToken(b, CRLF);
+    if (!r) r = consumeToken(b, WHITE_SPACE);
     exit_section_(b, m, null, r);
     return r;
   }
